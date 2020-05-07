@@ -4,10 +4,10 @@ Le héros, qui se trouve en pleine Seconde Guerre Mondiale, doit déchiffrer un 
 
 ### Idées en vrac
 
-    - Trois niveaux de difficutés, faire une page menu
-    - Mettre une musique d'ambiance
-    - Une sorte de bureau pour le design ?
-    - Lettre pour communication avec l'allié ?
+ - Trois niveaux de difficutés, faire une page menu
+ - Mettre une musique d'ambiance
+ - Une sorte de bureau pour le design ?
+ - Lettre pour communication avec l'allié ?
 
 # 2 - Mots fléchés 
 
