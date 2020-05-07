@@ -1,6 +1,13 @@
 # 1 - Roulette de César
 
-Le héros, qui se trouve en pleine Seconde Guerre Mondiale, doit déchiffrer un message chiffré pour trouver la position d'un général Allemand.
+Le héros, qui se trouve en pleine Seconde Guerre Mondiale, doit déchiffrer un message chiffré pour trouver la position d'un général Allemand. Le jeu se présentera sous la forme d'un tableau, qui sera rempli par Jquery avec un message chiffré avec la roue de césar, le message sera la position du général qui sera stockée sous la forme d'une liste. Le joueur pourra soliciter l'aide d'un camarade, mais celui çi Frallemand pour les indices. 
+
+### Idées en vrac
+
+    - Trois niveaux de difficutés, faire une page menu
+    - Mettre une musique d'ambiance
+    - Une sorte de bureau pour le design ?
+    - Lettre pour communication avec l'allié ?
 
 # 2 - Mots fléchés 
 
