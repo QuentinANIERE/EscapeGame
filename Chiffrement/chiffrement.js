@@ -293,6 +293,28 @@ const chiffrement = (liste, clef) => {
     return resultat;
 }
 
+const dechiffrement = (liste, clef) => {
+    
+    let resultat = [];
+
+    for (chiffre of liste) {     
+    //On récupére chaque chiffre de la liste tour à tour
+
+        chiffre -= clef;
+        //On soustrait la clé de chiffrement
+
+        while (chiffre < 0) {
+        //Si le résultat obtenu est plus petit que 0, "la roue à fait à tour" donc on ajoute 26. 
+        //On repete l'opération autant que nécéssaire
+            chiffre += 26;
+        }
+
+        resultat.push(chiffre);
+    }
+
+    return resultat;
+}
+
 let message = "au bar";
 console.log("Le message non chifré => " + message);
 console.log();
@@ -301,7 +323,7 @@ message = transformationChiffres(message);
 console.log("Le message transformé en chiffres => " + message);
 console.log();
 
-clef = 237;
+clef = 252;
 
 messageChiffre = chiffrement(message, clef);
 console.log("Le message chiffré => " + messageChiffre);
@@ -309,3 +331,15 @@ console.log();
 
 message = transformationLettres(messageChiffre);
 console.log("Le message chiffré et transformè en letre => " + message);
+console.log();
+
+message = transformationChiffres(message);
+console.log("Le message chiffré reconverti en chiffre => " + message);
+console.log()
+
+message = dechiffrement(message, clef);
+console.log("Le message déchiffré => " + message);
+console.log();
+
+message = transformationLettres(message);
+console.log("Le message déchiffré => " + message);
