@@ -4,14 +4,14 @@ Le héros, qui se trouve en pleine Seconde Guerre Mondiale, doit déchiffrer un 
 
 ### Idées en vrac
 
- - Trois niveaux de difficutés, faire une page menu
+ - Faire une page d'accueil avec des slides 
  - Mettre une musique d'ambiance
  - Une sorte de bureau pour le design ?
  - Lettre pour communication avec l'allié ?
 
 # 2 - Mots fléchés 
 
-Le héros, séquestré dans une maison de retraite par une petite vielle, doit finir une grille de mots fléchés pour s'en sortir.
+Le héros, séquestré dans une maison de retraite par une petite mamie, doit finir une grille de mots fléchés pour s'en sortir.
 
 # 3 - Mastermind 
 
