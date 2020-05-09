@@ -130,6 +130,146 @@ const transformationChiffres = (chaine) => {
     return nouvelleListe;
 }
 
+const transformationLettres = (liste) => {
+
+    /* Cette fonction transforme les entiers en lettres, selon leur position dans l'alphabet latin.
+    exemple => 1 = a, 6 = f, 26 = z */  
+    
+    let nouvelleListe = [];
+    
+    for (entier of liste) {
+    //On effectue l'opération autant de fois qu'il y'a d'index dans la liste. 
+    //Les entiers sont asignés tour à tour a la variable caractere
+
+        switch(entier) {
+
+            case 0:
+                nouvelleListe.push(" ")
+                break; //Le break est indispensable car sinon cela execute le bloc d'en dessous même si la condition est false
+
+            case 1:
+                nouvelleListe.push("a");
+                break;
+
+            case 2:
+                nouvelleListe.push("b");
+                break;
+            
+            case 3:
+                nouvelleListe.push("c");
+                break;
+
+            case 4:
+                nouvelleListe.push("d");
+                break;
+
+            case 5:
+                nouvelleListe.push("e");
+                break;
+
+            case 6:
+                nouvelleListe.push("f");
+                break;
+            
+            case 7:
+                nouvelleListe.push("g");
+                break;
+
+            case 8:
+                nouvelleListe.push("h");
+                break;
+
+            case 9:
+                nouvelleListe.push("i");
+                break;
+
+            case 10:
+                nouvelleListe.push("j");
+                break;
+            
+            case 11:
+                nouvelleListe.push("k");
+                break;
+            
+            case 12:
+                nouvelleListe.push("l");
+                break;
+
+            case 13:
+                nouvelleListe.push("m");
+                break;
+
+            case 14:
+                nouvelleListe.push("n");
+                break;
+
+            case 15:
+                nouvelleListe.push("o");
+                break;
+
+            case 16:
+                nouvelleListe.push("p");
+                break;
+
+            case 17:
+                nouvelleListe.push("q");
+                break;
+
+            case 18:
+                nouvelleListe.push("r");
+                break;
+
+            case 19:
+                nouvelleListe.push("s");
+                break;
+
+            case 20:
+                nouvelleListe.push("t");
+                break;
+
+            case 21:
+                nouvelleListe.push("u");
+                break;
+
+
+            case 22:
+                nouvelleListe.push("v");
+                break;
+
+            case 23:
+                nouvelleListe.push("w");
+                break;
+
+            case 24:
+                nouvelleListe.push("x");
+                break;
+
+            case 25:
+                nouvelleListe.push("y");
+                break;
+            
+            case 26:
+                nouvelleListe.push("z");
+                break;
+
+            default:
+                nouvelleListe.push("?");
+                break;
+
+        }
+    }
+
+    let chaine = "";
+
+    for (caratere of nouvelleListe) {
+    //On ajout chaque caractere traduit a une chaine
+        
+        chaine += caratere;
+    }
+
+    return chaine;
+}
+
 
 const chiffrement = (liste, clef) => {
     
@@ -161,6 +301,11 @@ message = transformationChiffres(message);
 console.log("Le message transformé en chiffres => " + message);
 console.log();
 
-clef = 99;
+clef = 237;
+
 messageChiffre = chiffrement(message, clef);
-console.log("Le message chiffré => " + messageChiffre)
+console.log("Le message chiffré => " + messageChiffre);
+console.log();
+
+message = transformationLettres(messageChiffre);
+console.log("Le message chiffré et transformè en letre => " + message);
