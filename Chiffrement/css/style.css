@@ -2,21 +2,49 @@ body {
     background-image: url("../médias/fond.jpg");
 }
 
+table {
+    border-collapse: collapse;
+    align-self: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+td {
+    padding: 5px;
+    border: 1px solid black;
+    font-size: 30px;
+}
+
+@font-face {
+    font-family: KillingFont;
+    src: url('../font/KillingFont.otf');
+  }
+  
+
 #ZoneDeJeu {  
     left: 50%;
     top: 50%;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: KillingFont;
     position: absolute;
     text-align: center;
     transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
 }
 
 #machine {
+    text-align: auto;
+    position: relative;
     background-color: red;
     margin-left: auto;
     margin-right: auto;
     height: 300px;
     width: 600px;
+    display: flex;
+    justify-content: center;
 }
+
