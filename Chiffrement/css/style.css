@@ -15,8 +15,8 @@ body {
 
 #machine {
     background-color: red;
-    display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    height: 300px;
+    width: 600px;
 }
