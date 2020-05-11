@@ -1,0 +1,22 @@
+body {
+    background-image: url("../médias/fond.jpg");
+}
+
+#ZoneDeJeu {  
+    left: 50%;
+    top: 50%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+#machine {
+    background-color: red;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
