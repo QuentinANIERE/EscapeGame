@@ -315,31 +315,33 @@ const dechiffrement = (liste, clef) => {
     return resultat;
 }
 
-let message = "au bar";
-console.log("Le message non chifré => " + message);
-console.log();
+// let message = "au bar";
+// console.log("Le message non chifré => " + message);
+// console.log();
+// 
+// message = transformationChiffres(message);
+// console.log("Le message transformé en chiffres => " + message);
+// console.log();
+// 
+// clef = 252;
+// 
+// messageChiffre = chiffrement(message, clef);
+// console.log("Le message chiffré => " + messageChiffre);
+// console.log();
+// 
+// message = transformationLettres(messageChiffre);
+// console.log("Le message chiffré et transformè en letre => " + message);
+// console.log();
+// 
+// message = transformationChiffres(message);
+// console.log("Le message chiffré reconverti en chiffre => " + message);
+// console.log()
+// 
+// message = dechiffrement(message, clef);
+// console.log("Le message déchiffré => " + message);
+// console.log();
+// 
+// message = transformationLettres(message);
+// console.log("Le message déchiffré => " + message);
 
-message = transformationChiffres(message);
-console.log("Le message transformé en chiffres => " + message);
-console.log();
-
-clef = 252;
-
-messageChiffre = chiffrement(message, clef);
-console.log("Le message chiffré => " + messageChiffre);
-console.log();
-
-message = transformationLettres(messageChiffre);
-console.log("Le message chiffré et transformè en letre => " + message);
-console.log();
-
-message = transformationChiffres(message);
-console.log("Le message chiffré reconverti en chiffre => " + message);
-console.log()
-
-message = dechiffrement(message, clef);
-console.log("Le message déchiffré => " + message);
-console.log();
-
-message = transformationLettres(message);
-console.log("Le message déchiffré => " + message);
+export { transformationLettres };
