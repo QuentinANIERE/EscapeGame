@@ -1,50 +1,50 @@
+@font-face {
+    font-family: KillingFont;
+    src: url('../font/KillingFont.otf');
+}
+
 body {
     background-image: url("../médias/fond.jpg");
 }
 
 table {
-    border-collapse: collapse;
-    align-self: center;
+    /* Règles pour centrer le tableau */
+    top: 50%;
     margin: 0 auto;
+    align-self: center;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%); margin: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); 
+    
+    border-collapse: collapse;
 }
 
 td {
     padding: 5px;
-    border: 1px solid black;
     font-size: 30px;
+    border: 1px solid black;
 }
-
-@font-face {
-    font-family: KillingFont;
-    src: url('../font/KillingFont.otf');
-  }
-  
 
 #ZoneDeJeu {  
     left: 50%;
     top: 50%;
-    color: white;
-    font-family: KillingFont;
     position: absolute;
     text-align: center;
     transform: translate(-50%, -50%);
+
+    color: white;
+    font-family: KillingFont;    
 }
 
 #machine {
-    text-align: auto;
-    position: relative;
-    background-color: red;
-    margin-left: auto;
-    margin-right: auto;
     height: 300px;
     width: 600px;
     display: flex;
+    text-align: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
     justify-content: center;
+
+    background-color: red; 
 }
 
