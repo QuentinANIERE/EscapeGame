@@ -315,33 +315,19 @@ const dechiffrement = (liste, clef) => {
     return resultat;
 }
 
-// let message = "au bar";
-// console.log("Le message non chifré => " + message);
-// console.log();
-// 
-// message = transformationChiffres(message);
-// console.log("Le message transformé en chiffres => " + message);
-// console.log();
-// 
-// clef = 252;
-// 
-// messageChiffre = chiffrement(message, clef);
-// console.log("Le message chiffré => " + messageChiffre);
-// console.log();
-// 
-// message = transformationLettres(messageChiffre);
-// console.log("Le message chiffré et transformè en letre => " + message);
-// console.log();
-// 
-// message = transformationChiffres(message);
-// console.log("Le message chiffré reconverti en chiffre => " + message);
-// console.log()
-// 
-// message = dechiffrement(message, clef);
-// console.log("Le message déchiffré => " + message);
-// console.log();
-// 
-// message = transformationLettres(message);
-// console.log("Le message déchiffré => " + message);
+function EntierAléatoire(ChiffreMax) {
+    return Math.floor(Math.random() * Math.floor(ChiffreMax));
+  }
 
-export { transformationLettres };
+let PositionsGeneral = ["au bar", "a la petanque"]
+let indexRandom = Math.random();
+
+indexRandom *= PositionsGeneral.length;
+indexRandom = Math.floor(indexRandom);
+
+let clef = EntierAléatoire(9999);
+
+let message = transformationChiffres(PositionsGeneral[indexRandom]);
+
+message = chiffrement(message, clef)
+message = transformationLettres(message)

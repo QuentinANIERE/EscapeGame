@@ -4,6 +4,7 @@
 }
 
 body {
+    user-select: none;
     background-image: url("../médias/fond.jpg");
 }
 
@@ -51,6 +52,11 @@ td {
     background-color: blue;
 }
 
+/* Parent:Condition>Element qui sera affecté (Doit être enfant) */
+.CaseBouttonMachine:active> .BouttonMachine {
+    color: red;
+}
+
 .BouttonMachine {
     border: none;
     outline: none;
@@ -59,6 +65,4 @@ td {
 
 .BouttonMachine:active {
     color: red;
-    height: 120%;
 }
-
