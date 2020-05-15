@@ -8,6 +8,12 @@ body {
     background-image: url("../médias/fond.jpg");
 }
 
+span {
+    color: white;
+    font-size: 30px;
+    font-family: "Times New Roman";
+}
+
 table {
     top: 50%;
     margin: 0 auto;
@@ -31,6 +37,13 @@ td {
     text-align: center;
     transform: translate(-50%, -50%);    
 }
+
+#Banderole {
+    padding: 1%;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #e74c3c;
+}   
 
 #machine {
     height: 300px;

@@ -329,5 +329,8 @@ let clef = EntierAléatoire(9999);
 
 let message = transformationChiffres(PositionsGeneral[indexRandom]);
 
-message = chiffrement(message, clef)
-message = transformationLettres(message)
+message = chiffrement(message, clef);
+message = transformationLettres(message);
+
+let AffichageMessage = document.getElementById("MessageChiffre");
+AffichageMessage.innerHTML = message;
