@@ -1,18 +1,5 @@
-# 1 - Roulette de César
+# Escape Game JavaScript
 
-Le héros, qui se trouve en pleine Seconde Guerre Mondiale, doit déchiffrer un message chiffré pour trouver la position d'un général Allemand. Le jeu se présentera sous la forme d'un tableau, qui sera rempli par Jquery avec un message chiffré avec la roue de césar, le message sera la position du général qui sera stockée sous la forme d'une liste. Le joueur pourra soliciter l'aide d'un camarade, mais celui çi Frallemand pour les indices. 
+Ce projet est à l'initiative de mon professeur de NSI : Chaque élève de la spécialité NSI du lycée Saint Corbeil et Saint Spire Sénart (60 élèves) doivent réaliser une énigme en JavaScript. Toutes les énigmes sont ensuite compilées par le professeur afin de réaliser un jeu complet type "Escape Game". Le sujet est libre, l'histoire étant un héros qui voyage à travers le temps, ce qui permet à chacun une grande liberté scénaristique. 
 
-### Idées en vrac
-
- - Faire une page d'accueil avec des slides 
- - Mettre une musique d'ambiance
- - Une sorte de bureau pour le design ?
- - Lettre pour communication avec l'allié ?
-
-# 2 - Mots fléchés 
-
-Le héros, séquestré dans une maison de retraite par une petite mamie, doit finir une grille de mots fléchés pour s'en sortir.
-
-# 3 - Mastermind 
-
-Le héros, qui se trouve dans une période de l'histoire encore indéterminée, doit  désamorcer une bombe en trouvant la bonne combinaison de fils à couper.
+J'ai choisi de réaliser une énigme sur le thème de chiffrement, qui se déroule pendant la Seconde Guerre Mondiale. Le héros doit trouver une clé de chiffrement à quatres chiffres pour déchiffrer un message, qui est la position d'un général allemand. Le message est chiffré avec la méthode de la roue de césar, ce qui n'est pas une méthode sécurisée, mais une bon entrée en matière dans le monde de la cryptographie, car j'ai choisi de faire une énigme compréhensible par le plus grand monde.
