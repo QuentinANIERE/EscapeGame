@@ -71,6 +71,9 @@ function estMultiplede26(Chiffre) {
 
 function changementsValeur(opération){
 
+    audio.play();
+    //On joue le son du clic
+
     opération = opération.split("_");
     //On récupere l'opération à effectuer (plus ou moins) et la case à changer
 
@@ -165,3 +168,6 @@ b_2.addEventListener("click", function() { changementsValeur(this.id); } );
 b_3.addEventListener("click", function() { changementsValeur(this.id); } );
 b_4.addEventListener("click", function() { changementsValeur(this.id); } );
 //Au clic, on lance la fonction avec comme argument l'id HTML du boutton cliqué, ou de la case
+
+let audio = document.querySelector("audio");
+//On sélectione l'audio caché du document
