@@ -50,9 +50,26 @@ function déchiffrement(chaine, clef) {
     return resultat;
 }
 
-function EntierAléatoire(ChiffreMax) {
+function EntierAléatoire(ChiffreMax) { 
     return Math.floor(Math.random() * Math.floor(ChiffreMax));
-  }
+}
+
+function estMultiplede26(Chiffre) {
+
+    //Fonction qui vérifie si un chiffre est un multiple de 26 en vérifiant le reste 
+    //d'une division euclidienne
+
+    reste = Chiffre % 26;
+    
+    if (reste == 0) {
+        return true;
+
+    } else {
+        return false;
+    }
+}
+
+
 
 const alphabet = " abcdefghijklmnopqrstuvwxyz";
 //Définition de l'alphabet + l'espace à l'index 0
@@ -64,11 +81,21 @@ let indexRandom = EntierAléatoire(PositionsGeneral.length);
 let clef = EntierAléatoire(9999);
 //On choisi un clef de chiffrement aléatoire à quatre chiffre 
 
+while (estMultiplede26(clef)) {
+//Tant que la clef est un multiple de 26, le message ne sera pas chiffré correctement
+
+    clef = EntierAléatoire(9999);
+    //On régenère une nouvelle clef
+}
+
+console.log(clef); //Temporaire pour le dev
+
 let MessageChiffre = chiffrement(PositionsGeneral[indexRandom], clef);
 //On chiffre la position
 
-console.log(MessageChiffre);
-
 let banderole = document.getElementById("MessageChiffre");
 banderole.innerHTML = MessageChiffre;
-// On récupere la banderole HTML et on affiche le message chiffrée
+// On récupere la banderole HTML et on affiche le message chiffré
+
+document.oncontextmenu = new Function("return false");
+//Fonction qui empêche d'afficher le menu du clic droit
