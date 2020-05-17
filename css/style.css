@@ -8,12 +8,6 @@ body {
     background-image: url("../médias/fond.jpg");
 }
 
-span {
-    color: white;
-    font-size: 30px;
-    font-family: "Times New Roman";
-}
-
 table {
     top: 50%;
     margin: 0 auto;
@@ -43,7 +37,13 @@ td {
     margin: 10px;
     border-radius: 30px;
     background-color: #e74c3c;
-}   
+} 
+
+#MessageChiffre {
+    color: white;
+    font-size: 30px;
+    font-family: "Times New Roman";
+}
 
 #machine {
     height: 300px;
