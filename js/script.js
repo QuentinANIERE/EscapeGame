@@ -104,7 +104,23 @@ function changementsValeur(opération){
     }
 }
 
+function clicDéchiffrement() {
 
+    let valeurCase = [];
+
+    for(caseAff of listeCase) {
+        valeurCase.push(caseAff.innerHTML);
+    }
+
+    clefUser = parseInt(valeurCase.join(""));
+
+    ancienMessage = banderole.innerHTML;
+    nouveauMessage = déchiffrement(ancienMessage, clefUser);
+
+    banderole.innerHTML = nouveauMessage;
+}
+
+//TODO garde en mémoire le message chiffré origal et déchiffre celui ci pas le nouveau
 
 const alphabet = " abcdefghijklmnopqrstuvwxyz";
 //Définition de l'alphabet + l'espace à l'index 0
@@ -147,16 +163,19 @@ for(caseAff of listeCase) {
 document.oncontextmenu = new Function("return false");
 //Fonction qui empêche d'afficher le menu du clic droit
 
-let h_1 = document.getElementById("+_1");
-let h_2 = document.getElementById("+_2");
-let h_3 = document.getElementById("+_3");
-let h_4 = document.getElementById("+_4");
+const h_1 = document.getElementById("+_1");
+const h_2 = document.getElementById("+_2");
+const h_3 = document.getElementById("+_3");
+const h_4 = document.getElementById("+_4");
 
-let b_1 = document.getElementById("-_1");
-let b_2 = document.getElementById("-_2");
-let b_3 = document.getElementById("-_3");
-let b_4 = document.getElementById("-_4");
+const b_1 = document.getElementById("-_1");
+const b_2 = document.getElementById("-_2");
+const b_3 = document.getElementById("-_3");
+const b_4 = document.getElementById("-_4");
 //Récuperation des bouttons HTML ainsi que des cases
+
+const bt_décod = document.getElementById("bt_décod")
+//Récupération du boutton de validation
 
 h_1.addEventListener("click", function() { changementsValeur(this.id); } );
 h_2.addEventListener("click", function() { changementsValeur(this.id); } );
@@ -168,6 +187,8 @@ b_2.addEventListener("click", function() { changementsValeur(this.id); } );
 b_3.addEventListener("click", function() { changementsValeur(this.id); } );
 b_4.addEventListener("click", function() { changementsValeur(this.id); } );
 //Au clic, on lance la fonction avec comme argument l'id HTML du boutton cliqué, ou de la case
+
+bt_décod.addEventListener("click", clicDéchiffrement);
 
 let audio = document.querySelector("audio");
 //On sélectione l'audio caché du document
