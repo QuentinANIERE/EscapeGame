@@ -112,6 +112,10 @@ function changementsValeur(opération){
     }
 }
 
+function victoire() {
+    window.location = "./bravo.html";
+}
+
 function clicDéchiffrement() {
 
     let valeurCase = [];
@@ -131,6 +135,13 @@ function clicDéchiffrement() {
 
     banderole.innerHTML = nouveauMessage;
     //On affiche le message
+
+    if (nouveauMessage == MessageClair) {
+    //Si le message déchiffré est le message de départ
+
+        setTimeout(() => {  victoire() }, 1000);
+        //Au bout de 1000ms, on appelle la fonction victoire
+    }
 }
 
 //TODO garde en mémoire le message chiffré origal et déchiffre celui ci pas le nouveau
@@ -154,7 +165,8 @@ while (estMultiplede26(clef)) {
 
 console.log(clef); //Temporaire pour le dev
 
-let MessageChiffre = chiffrement(PositionsGeneral[indexRandom], clef);
+let MessageClair = PositionsGeneral[indexRandom];
+let MessageChiffre = chiffrement(MessageClair, clef);
 
 let banderole = document.getElementById("MessageChiffre");
 banderole.innerHTML = MessageChiffre;
