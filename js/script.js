@@ -81,26 +81,34 @@ function changementsValeur(opération){
     //On converti l'id en index de la liste, la case avec l'id 1 étant stocké à l'indice 0
 
     if (opération[0] == "+") {
+    //Si le boutton est en haut, on ajoute 1
 
         ancienneValeur = listeCase[caseAff].innerHTML;
         nouvelleValeur = parseInt(ancienneValeur) + 1;
+        //On récupere la valeur affichée, on la converti en entier et on ajoute 1
 
         if (nouvelleValeur == 10) {
+        //Si on dépasse 10, on retourne à à
             nouvelleValeur = 0;
         }
 
         listeCase[caseAff].innerHTML = nouvelleValeur;
+        //On affiche la valeur dans la case appropriée
 
     } else {
+    //Si le boutton est en bas, on soustrait 1
 
         ancienneValeur = listeCase[caseAff].innerHTML;
         nouvelleValeur = parseInt(ancienneValeur) - 1;
+                //On récupere la valeur affichée, on la converti en entier et on eneleve 1
 
         if (nouvelleValeur == -1) {
+        //Si on atteint -1, on revient à 9
             nouvelleValeur = 9;
         }
 
         listeCase[caseAff].innerHTML = nouvelleValeur;
+        //On affiche la valeur dans la case appropriée
     }
 }
 
@@ -112,12 +120,17 @@ function clicDéchiffrement() {
         valeurCase.push(caseAff.innerHTML);
     }
 
-    clefUser = parseInt(valeurCase.join(""));
+    //On récupere la valeur de toutes les cases dans une liste
 
-    ancienMessage = banderole.innerHTML;
+    clefUser = parseInt(valeurCase.join(""));
+    //On transforme cette liste en entier de 4 chiffres
+
+    ancienMessage = MessageChiffre;
     nouveauMessage = déchiffrement(ancienMessage, clefUser);
+    //On déchiffre message original avec la clé proposée par l'utilisateur
 
     banderole.innerHTML = nouveauMessage;
+    //On affiche le message
 }
 
 //TODO garde en mémoire le message chiffré origal et déchiffre celui ci pas le nouveau
