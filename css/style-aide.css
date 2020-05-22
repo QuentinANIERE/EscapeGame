@@ -1,0 +1,33 @@
+@font-face {
+    font-family: ChickenSoup;
+    src: url('../font/ChickenSoup.otf');
+}
+
+html, body {	
+    margin: 0;   
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    display: table;
+    text-align: center;
+    background-image: url("../médias/vieux_papier.jpg");
+}
+
+footer {
+    height: 100px;
+    display: table-row;
+}
+
+p { 
+    font-size: 200%;
+    margin-top: 35%;
+    font-family: ChickenSoup;
+}
+
+input {
+    width: 89%;
+    margin: 5%;
+}
