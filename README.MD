@@ -6,10 +6,8 @@ J'ai choisi de réaliser une énigme sur le thème de chiffrement, qui se dérou
 
 ## Liste de fonctionnalités à implémenter :
 
-  - Faire une autre fenêtre d'aide
-  - Afficher une page d'intro avec des slides
-  - Rendre la page un peu plus (Beaucoup plus) jolie, voir le fond et tout
   - Musique de fond
+  - Afficher une page d'intro avec des slides
   - Transition in page avec Swuup
-  - Rendre responsive
-  - Ajouter des sécurités anti-triche (LocalStorageChiffré, des trucs dans le genre)
+  - Mieux gérer le responsive
+  - Stocker le message dans le LocalStorage pour rechargement de page
