@@ -70,7 +70,7 @@ function estMultiplede26(Chiffre) {
 
 function changementsValeur(opération){
 
-    audio.play();
+    audioClic.play();
     //On joue le son du clic
 
     opération = opération.split("_");
@@ -223,6 +223,12 @@ b_4.addEventListener("click", function() { changementsValeur(this.id); } );
 bt_décod.addEventListener("click", clicDéchiffrement);
 bt_aide.addEventListener("click", clicAide);
 
-let audio = document.querySelector("audio");
-audio.preload;
-//On sélectione l'audio caché du document et on le précharge pour éviter un délai
+let audioClic = document.getElementById("audioClic");
+audioClic.preload;
+//On sélectione l'audio du clic caché du document et on le précharge pour éviter un délai
+
+let musiqueFond = document.getElementById("musiqueFond");
+//On sélection l'audio HTML, mais on ne peut pas le joueur directement car l'utilisateur n'a pas interagit avec le DOM
+
+setTimeout(() => { musiqueFond.play() }, 500);
+//On lance donc la lecture en asyncrhone au bout de 500ms (Merci Google Chrome...)
