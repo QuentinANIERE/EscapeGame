@@ -6,8 +6,8 @@ J'ai choisi de réaliser une énigme sur le thème de chiffrement, qui se dérou
 
 ## Liste de fonctionnalités à implémenter :
 
-  - Musique de fond
-  - Afficher une page d'intro avec des slides
-  - Transition in page avec Swuup
+  - Finir la page d'intro
+  - Régler le problème de la musique de fond
   - Mieux gérer le responsive
   - Stocker le message dans le LocalStorage pour rechargement de page
+  - Transition in page avec Swuup
