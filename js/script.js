@@ -56,12 +56,11 @@ function EntierAléatoire(ChiffreMax) {
 
 function estMultiplede26(Chiffre) {
 
-    //Fonction qui vérifie si un chiffre est un multiple de 26 en vérifiant le reste 
-    //d'une division euclidienne
+    //Fonction qui vérifie si un chiffre est un multiple de 26 en vérifiant le modulo 
 
-    reste = Chiffre % 26;
+    modulo = Chiffre % 26;
     
-    if (reste == 0) {
+    if (modulo == 0) {
         return true;
 
     } else {
@@ -225,4 +224,5 @@ bt_décod.addEventListener("click", clicDéchiffrement);
 bt_aide.addEventListener("click", clicAide);
 
 let audio = document.querySelector("audio");
-//On sélectione l'audio caché du document
+audio.preload;
+//On sélectione l'audio caché du document et on le précharge pour éviter un délai
