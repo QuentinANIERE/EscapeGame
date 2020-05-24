@@ -15,12 +15,22 @@ function demandeAide() {
 
             break; //Usage du break néccésaire dans le switch
 
+        case "T'es qui ?":
+        case "t'es qui ?":
+        case "T'es qui":
+        case "t es qui":
+        case "Qui est tu ?":
+        case "qui est tu ?":
+        //On prend en compte les fautes d'ortographes
+            texte.innerHTML = "Je suis Gunther, Je suis là pour t'aider. Pose moi une question !"
+            break;
+
         case "C'est quoi ?":
         case "C'est quoi":
         case "c'est quoi ?":
         case "C est quoi ?":
         case "c koi":
-        //On prend en compte les fautes d'ortographes
+        
 
             texte.innerHTML = "C'est un message chiffré ennemi !";
             break;
@@ -30,7 +40,7 @@ function demandeAide() {
         case "Aide moi":
         case "aide moi":
 
-            texte.innerHTML = "Pose moi une question si tu veux je t'aide !";
+            texte.innerHTML = "Pose moi une question si tu veux que je t'aide !";
             break;
 
         case "méthode":
@@ -39,7 +49,7 @@ function demandeAide() {
         case "Quelle méthode ?":
         case "quelle méthode":
 
-            texte.innerHTML = "Je pense qu'ils ont utilisé la méthode de la roue de césar";
+            texte.innerHTML = "Ce message est chiffré avec la méthode de césar";
             break;
 
     }

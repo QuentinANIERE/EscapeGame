@@ -151,8 +151,6 @@ function clicDéchiffrement() {
     }
 }
 
-//TODO garde en mémoire le message chiffré origal et déchiffre celui ci pas le nouveau
-
 const alphabet = " abcdefghijklmnopqrstuvwxyz";
 //Définition de l'alphabet + l'espace à l'index 0
 
