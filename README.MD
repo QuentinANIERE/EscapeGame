@@ -6,7 +6,6 @@ J'ai choisi de réaliser une énigme sur le thème de chiffrement, qui se dérou
 
 ## Liste de fonctionnalités à implémenter :
 
-  - Finir la page d'intro
   - Ajouter des indices :
 
     [] Date de naissance (Si 0)
