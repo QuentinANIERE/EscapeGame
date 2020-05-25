@@ -1,3 +1,6 @@
+let clef = localStorage.getItem("Clef");
+//On récupère la clef de chiffrement
+
 function demandeAide() {
 
     switch(saisie.value) {

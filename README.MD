@@ -8,13 +8,13 @@ J'ai choisi de réaliser une énigme sur le thème de chiffrement, qui se dérou
 
   - Ajouter des indices :
 
-    [] Date de naissance (Si 0)
-    [] Département de naissance
-    [] Chiffre préféré
+    [ ] Date de naissance (Si 0)
+    [ ] Département de naissance
+    [ ] Chiffre préféré
 
   - Mieux gérer le responsive sur la page de jeu
   - Faire une page de félications correcte (Confettis ?)
-  - Stocker le message dans le LocalStorage pour rechargement de page
+  - Faire un boutton couper le son
   - Rediriger vers intro si l'user arrive direct sur le jeu
   - Redirigez vers le jeu/intro si l'user arrive sur la page de félicitations
   - Transition in page avec Swuup

@@ -1,3 +1,11 @@
+const alphabet = " abcdefghijklmnopqrstuvwxyz";
+//Définition de l'alphabet + l'espace à l'index 0
+
+let clef;
+let MessageClair;
+let MessageChiffre;
+//On initialise ces variables en dehors du if pour leur donner une portée globale
+
 function chiffrement(chaine, clef) {
 
     let resultat = "";
@@ -151,27 +159,43 @@ function clicDéchiffrement() {
     }
 }
 
-const alphabet = " abcdefghijklmnopqrstuvwxyz";
-//Définition de l'alphabet + l'espace à l'index 0
 
-let PositionsGeneral = ["au bar", "a la petanque"];
-let indexRandom = EntierAléatoire(PositionsGeneral.length);
-//On choisi une position aléatoire pour le général parmis la liste de positions possibles
+if (!localStorage.getItem("Clef") && !localStorage.getItem("MessageChiffre")) {
+//Si aucune partie n'a été commencée
 
-let clef = EntierAléatoire(9999);
-//On choisi un clef de chiffrement aléatoire à quatre chiffre 
-
-while (estMultiplede26(clef)) {
-//Tant que la clef est un multiple de 26, le message ne sera pas chiffré correctement
+    let PositionsGeneral = ["au bar", "a la petanque"];
+    let indexRandom = EntierAléatoire(PositionsGeneral.length);
+    //On choisi une position aléatoire pour le général parmis la liste de positions possibles
 
     clef = EntierAléatoire(9999);
-    //On régenère une nouvelle clef
+    //On choisi un clef de chiffrement aléatoire à quatre chiffre 
+
+    while (estMultiplede26(clef)) {
+    //Tant que la clef est un multiple de 26, le message ne sera pas chiffré correctement
+
+        clef = EntierAléatoire(9999);
+        //On régenère une nouvelle clef
+    }
+
+    MessageClair = PositionsGeneral[indexRandom];
+    MessageChiffre = chiffrement(MessageClair, clef);
+
+    localStorage.setItem("Clef", clef);
+    localStorage.setItem("MessageClair", MessageClair);
+    localStorage.setItem("Message", MessageChiffre);
+
+    //On stocke la clef de chiffrement et le message chiffre dans le local storage
+    //Cela permet de récuperer les valeurs dans le script d'aide et de garder les mêmes valeurs en cas de rechargement
+
+} else {
+  //Si il y'a une partie déja commencée 
+
+  clef = localStorage.getItem("Clef");
+  MessageClair = localStorage.getItem("MessageClair");
+  MessageChiffre = localStorage.getItem("Message");
+
 }
 
-console.log(clef); //Temporaire pour le dev
-
-let MessageClair = PositionsGeneral[indexRandom];
-let MessageChiffre = chiffrement(MessageClair, clef);
 
 let banderole = document.getElementById("MessageChiffre");
 banderole.innerHTML = MessageChiffre;
