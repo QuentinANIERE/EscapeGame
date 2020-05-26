@@ -129,7 +129,7 @@ function changementsValeur(opération){
     let index = NuméroCaseIndice - 1;
     //On prend en compte le fait que l'indice d'une chaine commence toujours à 0
 
-    if (ContenuCaseIndice.innerHTML == clef.charAt(index) && caseAff + 1 == NuméroCaseIndice)  {
+    if (ContenuCaseIndice.innerHTML == listeClef[index] && caseAff + 1 == NuméroCaseIndice)  {
     //Si le contenu de la case indice est égale à la valeur de son index de la clef
     //ET que cette case est celle qui vient d'être modifié :
 
@@ -189,7 +189,7 @@ function clicDéchiffrement() {
 if (!localStorage.getItem("Clef") && !localStorage.getItem("MessageChiffre")) {
 //Si aucune partie n'a été commencée
 
-    let PositionsGeneral = ["au bar", "a la petanque", "au petit coin"];
+    let PositionsGeneral = ["au bar", "a la petanque", "au petit coin", "chez sa mamie"];
     let indexRandom = EntierAléatoire(PositionsGeneral.length);
     //On choisi une position aléatoire pour le général parmis la liste de positions possibles
 
@@ -222,6 +222,7 @@ if (!localStorage.getItem("Clef") && !localStorage.getItem("MessageChiffre")) {
 
 }
 
+let listeClef = clef.split("");
 
 let banderole = document.getElementById("MessageChiffre");
 banderole.innerHTML = MessageChiffre;
