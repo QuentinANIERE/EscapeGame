@@ -55,19 +55,42 @@ function demandeAide() {
             texte.innerHTML = "Ce message est chiffré avec la méthode de césar";
             break;
 
+        case "Comment faire ?":
+        case "comment faire ?":
+        case "Comment faire":
+        case "comment faire":
+        case "Comment ?":
+        case "comment ?":
+        case "Comment":
+        case "comment":
+
+        texte.innerHTML = "Je pense que la clé de chiffrement dépend de chiffres de la vie du général";
+        break;
+
+        case "Vie du général":
+        case "vie général":
+        case "général":
+        case "Général":
+        case "Qui est le général ?":
+        case "qui est le général":
+        case "Chiffre préféré général":
+        case "chiffre préfréré général":
+
+            ChiffrePref = clef.substring(0, 2);
+            //On détermine le chiffre du général, qui est les deux premiers chiffre de la clef
+
+            texte.innerHTML = "Le général Shneitzel est un homme simple. Son chiffre préféré est " + ChiffrePref;
+            break;
+
+        case "Naissance":
+        case "naissance":
+        
     }
 
     saisie.value = "";
     //Vidage de la zone de saisie
 }
 
-function detection() {
-    
-    if (event.key == "Enter") {
-    //Si l'utilisateur a appuyé sur la touche entrée
-        demandeAide();
-    }
-}
 
 let texte = document.getElementById("texteGunther");
 let saisie = document.getElementById("saisie");
@@ -77,5 +100,11 @@ let boutton = document.getElementById("boutton");
 boutton.addEventListener("click", demandeAide);
 //Ajout d'un callback au clic sur le boutton
 
-document.addEventListener("keypress", detection);
+document.addEventListener("keypress", function () {
+    
+    if (event.key == "Enter") {
+    //Si l'utilisateur a appuyé sur la touche entrée
+        demandeAide();
+    }
+});
 //Ajout d'un callback pour chaque pressée, la fonction vérifie si c'est la touche entré

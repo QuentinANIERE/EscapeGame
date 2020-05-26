@@ -12,6 +12,8 @@ html, body {
 body {
     width: 100%;
     display: table;
+    position: fixed;
+    overflow: hidden;
     user-select: none;
     text-align: center;
     background-image: url("../médias/vieux_papier.jpg");
@@ -24,7 +26,6 @@ footer {
 
 p { 
     font-size: 200%;
-    margin-top: 35%;
     margin-left: 5%;
     margin-right: 5%;
     font-family: ChickenSoup;

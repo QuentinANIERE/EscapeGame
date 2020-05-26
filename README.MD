@@ -8,9 +8,7 @@ J'ai choisi de réaliser une énigme sur le thème de chiffrement, qui se dérou
 
   - Ajouter des indices :
 
-    [ ] Date de naissance (Si 0)
-    [ ] Département de naissance
-    [ ] Chiffre préféré
+    - Une des cases de gauche "vibrera" quand sa valeur sera correcte
 
   - Mieux gérer le responsive sur la page de jeu
   - Faire une page de félications correcte (Confettis ?)

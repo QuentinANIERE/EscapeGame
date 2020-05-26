@@ -253,4 +253,4 @@ let musiqueFond = document.getElementById("musiqueFond");
 //On sélection l'audio HTML, mais on ne peut pas le joueur directement car l'utilisateur n'a pas interagit avec le DOM
 
 setTimeout(() => { musiqueFond.play() }, 500);
-//On lance donc la lecture en asyncrhone au bout de 500ms (Merci Google Chrome...)
+//On lance donc la lecture en asyncrhone au bout de 500ms
