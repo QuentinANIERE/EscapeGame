@@ -1,7 +1,7 @@
 const alphabet = " abcdefghijklmnopqrstuvwxyz";
 //Définition de l'alphabet + l'espace à l'index 0
 
-let clef;
+var clef;
 let MessageClair;
 let MessageChiffre;
 //On initialise ces variables en dehors du if pour leur donner une portée globale
@@ -128,6 +128,8 @@ function changementsValeur(opération){
 
     let index = NuméroCaseIndice - 1;
     //On prend en compte le fait que l'indice d'une chaine commence toujours à 0
+    
+    console.log(typeof ContenuCaseIndice.innerHTML + ContenuCaseIndice.innerHTML + typeof listeClef[index] + listeClef[index]);
 
     if (ContenuCaseIndice.innerHTML == listeClef[index] && caseAff + 1 == NuméroCaseIndice)  {
     //Si le contenu de la case indice est égale à la valeur de son index de la clef
@@ -186,8 +188,8 @@ function clicDéchiffrement() {
 }
 
 
-if (!localStorage.getItem("Clef") && !localStorage.getItem("MessageChiffre")) {
-//Si aucune partie n'a été commencée
+if (!localStorage.getItem("Clef") || !localStorage.getItem("MessageChiffre") || !localStorage.getItem("MessageClair")) {
+//Si il manque les données, soit aucune partie n'a été commencée, soit l'user à vidé certaine partie du localstorage
 
     let PositionsGeneral = ["au bar", "a la petanque", "au petit coin", "avec sa mamie"];
     let indexRandom = EntierAléatoire(PositionsGeneral.length);
@@ -207,11 +209,14 @@ if (!localStorage.getItem("Clef") && !localStorage.getItem("MessageChiffre")) {
     MessageChiffre = chiffrement(MessageClair, clef);
 
     localStorage.setItem("Clef", clef);
-    localStorage.setItem("MessageClair", MessageClair);
     localStorage.setItem("Message", MessageChiffre);
-
+    localStorage.setItem("MessageClair", MessageClair);
     //On stocke la clef de chiffrement et le message chiffre dans le local storage
     //Cela permet de récuperer les valeurs dans le script d'aide et de garder les mêmes valeurs en cas de rechargement
+
+    clef = clef + ""; //Pas d'utilisation de la méthode toString car elle fonctionne mal
+    //On transforme la clef en str car plus besoin d'effectuer des calculs dessus
+    //Plus facile pour traitement cara par cara.
 
 } else {
   //Si il y'a une partie déja commencée 
@@ -222,13 +227,12 @@ if (!localStorage.getItem("Clef") && !localStorage.getItem("MessageChiffre")) {
 
 }
 
-clef = toString(clef);
-
 let listeClef = clef.split("");
+//On transforme la clef en liste
 
 let banderole = document.getElementById("MessageChiffre");
 banderole.innerHTML = MessageChiffre;
-// On récupere la banderole HTML et on affiche le message chiffré
+//On récupere la banderole HTML et on affiche le message chiffré
 
 let case1 = document.getElementById("case1");
 let case2 = document.getElementById("case2");
