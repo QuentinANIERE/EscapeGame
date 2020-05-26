@@ -189,7 +189,7 @@ function clicDéchiffrement() {
 if (!localStorage.getItem("Clef") && !localStorage.getItem("MessageChiffre")) {
 //Si aucune partie n'a été commencée
 
-    let PositionsGeneral = ["au bar", "a la petanque", "au petit coin", "chez sa mamie"];
+    let PositionsGeneral = ["au bar", "a la petanque", "au petit coin", "avec sa mamie"];
     let indexRandom = EntierAléatoire(PositionsGeneral.length);
     //On choisi une position aléatoire pour le général parmis la liste de positions possibles
 
@@ -221,6 +221,8 @@ if (!localStorage.getItem("Clef") && !localStorage.getItem("MessageChiffre")) {
   MessageChiffre = localStorage.getItem("Message");
 
 }
+
+clef = toString(clef);
 
 let listeClef = clef.split("");
 
