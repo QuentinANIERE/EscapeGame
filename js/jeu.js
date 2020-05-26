@@ -59,8 +59,15 @@ function déchiffrement(chaine, clef) {
 }
 
 function EntierAléatoire(ChiffreMax) { 
+//Fonction qui renvoie un entier aléatoire entre 0 et le paramètre compris
     return Math.floor(Math.random() * Math.floor(ChiffreMax));
 }
+
+function EntierBorné(min, max) { 
+//Fonctio qui renvoie un entier entre les deux paramètres fournis
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+  
 
 function estMultiplede26(Chiffre) {
 
@@ -117,6 +124,25 @@ function changementsValeur(opération){
         listeCase[caseAff].innerHTML = nouvelleValeur;
         //On affiche la valeur dans la case appropriée
     }
+    //Code qui affiche l'indice (Vibration)
+
+    let index = NuméroCaseIndice - 1;
+    //On prend en compte le fait que l'indice d'une chaine commence toujours à 0
+
+    if (ContenuCaseIndice.innerHTML == clef.charAt(index) && caseAff + 1 == NuméroCaseIndice)  {
+    //Si le contenu de la case indice est égale à la valeur de son index de la clef
+    //ET que cette case est celle qui vient d'être modifié :
+
+        CaseIndice.classList.add("Vibration");
+        setTimeout(function () { CaseIndice.classList.remove("Vibration")}, 250);
+        //On ajoute la vibration, et l'on la supprime au bout de 250ms
+
+    } else if (caseAff + 1 == NuméroCaseIndice) {
+    //Si la case modifié est la case indice, mais que sa valeur est incorrecte, on retire la classe vibration
+    //Afin d'arrêter net la vibration
+        
+        CaseIndice.classList.remove("Vibration");
+    }
 }
 
 function victoire() {
@@ -163,7 +189,7 @@ function clicDéchiffrement() {
 if (!localStorage.getItem("Clef") && !localStorage.getItem("MessageChiffre")) {
 //Si aucune partie n'a été commencée
 
-    let PositionsGeneral = ["au bar", "a la petanque"];
+    let PositionsGeneral = ["au bar", "a la petanque", "au petit coin"];
     let indexRandom = EntierAléatoire(PositionsGeneral.length);
     //On choisi une position aléatoire pour le général parmis la liste de positions possibles
 
@@ -214,9 +240,6 @@ for(caseAff of listeCase) {
     caseAff.innerHTML = EntierAléatoire(10);
 }
 
-document.oncontextmenu = new Function("return false");
-//Fonction qui empêche d'afficher le menu du clic droit
-
 const h_1 = document.getElementById("+_1");
 const h_2 = document.getElementById("+_2");
 const h_3 = document.getElementById("+_3");
@@ -230,6 +253,16 @@ const b_4 = document.getElementById("-_4");
 
 const bt_décod = document.getElementById("bt_décod")
 //Récupération du boutton de validation
+
+NuméroCaseIndice = EntierBorné(3, 4);
+//On défini aléatoirement le numéro de la case qui affichera l'indice
+
+let ContenuCaseIndice = document.getElementById("case" + NuméroCaseIndice);
+let CaseIndice = document.getElementById("CaseChiffre" + NuméroCaseIndice);
+//On stocke la case choisie aléatoirement ainsi que le contenu de la case
+
+document.oncontextmenu = new Function("return false");
+//Fonction qui empêche d'afficher le menu du clic droit
 
 h_1.addEventListener("click", function() { changementsValeur(this.id); } );
 h_2.addEventListener("click", function() { changementsValeur(this.id); } );

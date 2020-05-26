@@ -6,12 +6,9 @@ J'ai choisi de réaliser une énigme sur le thème de chiffrement, qui se dérou
 
 ## Liste de fonctionnalités à implémenter :
 
-  - Ajouter des indices :
-
-    - Une des cases de gauche "vibrera" quand sa valeur sera correcte
-
   - Mieux gérer le responsive sur la page de jeu
   - Faire une page de félications correcte (Confettis ?)
+  - Stocker la case indice dans le localStorage (Permet d'éviter la triche du reload)
   - Faire un boutton couper le son
   - Rediriger vers intro si l'user arrive direct sur le jeu
   - Redirigez vers le jeu/intro si l'user arrive sur la page de félicitations
