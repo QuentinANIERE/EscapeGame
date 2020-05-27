@@ -1,62 +1,97 @@
-const alphabet = " abcdefghijklmnopqrstuvwxyz";
-//Définition de l'alphabet + l'espace à l'index 0
+const alphabet = [" ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-var clef;
+let clef;
 let MessageClair;
 let MessageChiffre;
 //On initialise ces variables en dehors du if pour leur donner une portée globale
 
+
+function décalageAlphabet(indice) {
+
+    //Fonction qui décalage l'alphabet autant de fois que demandé
+
+    let liste = [" ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    
+    for (itération = 0; itération < indice; itération++) {
+
+        liste.unshift(liste.pop());
+        //On insère au début de la liste le dernier élement de la liste
+    }
+
+    return liste;
+}
+
 function chiffrement(chaine, clef) {
 
-    let resultat = "";
+    let AlphabetDécalé = décalageAlphabet(clef);
+    let Résultat = [];
 
     for (lettre of chaine) {
-    //On récupere chaque lettre de la chaine 
+    //On récupere chaque lettre du message à chiffrer
+    
+        
         for (index = 0; index < alphabet.length; index++) {
-        //On récupere chaque indice d'index de l'alphabet
+        //On récupere chaque index de l'alphabet
 
             if (lettre == alphabet[index]) {
-            //Si une lettre de la chaine correspondant à une lettre de l'alphabet
-            //Exemple = si a = a, on récupere la position 1 à laquelle on ajoutera la clef de chiffrement
-                nouveauRang = index + clef;
-
-                while (nouveauRang > 26) {
-                //Si on dépasse la lettre z, on revient à l'espace
-                    nouveauRang -= 26;
-                }
-                resultat += alphabet[nouveauRang];
+            //Si on a trouvé la place de la lettre dans l'alphabet normal
+                
+                Résultat.push(AlphabetDécalé[index]);
             }
         }
     }
 
-    return resultat;
+
+    return Résultat.join("");
 }
+
 
 function déchiffrement(chaine, clef) {
 
-    let resultat = "";
+    let AlphabetDécalé = décalageAlphabet(clef);
+    let Résultat = [];
 
     for (lettre of chaine) {
-    //On récupere chaque lettre de la chaine 
-        for (index = 0; index < alphabet.length; index++) {
-        //On récupere chaque indice d'index de l'alphabet
+    //On récupere chaque lettre du message à déchiffrer
+    
+        
+        for (index = 0; index < AlphabetDécalé.length; index++) {
+        //On récupere chaque index de l'alphabet décalé
 
-            if (lettre == alphabet[index]) {
-            //Si une lettre de la chaine correspondant à une lettre de l'alphabet
-            //Exemple = si a = a, on récupere la position 1 à laquelle on ajoutera la clef de chiffrement
-                nouveauRang = index - clef;
-
-                while (nouveauRang < 0) {
-                //Si on dépasse la lettre a, on revient à z
-                    nouveauRang += 26;
-                }
-                resultat += alphabet[nouveauRang];
+            if (lettre == AlphabetDécalé[index]) {
+            //Si on a trouvé la place de la lettre dans l'alphabet décalé
+                
+                Résultat.push(alphabet[index]);
+                //On récupere la lettre dans l'alphabet normal
             }
         }
     }
 
-    return resultat;
+
+    return Résultat.join("");
+
+
 }
+
+/* Visualisation :
+
+Alphabet normal : [" ", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+Alphabet décalé : ['z', ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y']
+
+Exemple de chiffrement de la lettre "a":
+
+    - Je récupere la position de a dans la première liste (1)
+    - Je récupere la lettre à la position de a dans la deuxième liste (Un espace)
+
+    a chiffré avec la clé 1 (La clé étant le décalage de la deuxième liste) donne donc un espace
+
+Exemple de déchiffrement d'un espace:
+
+    - Je récupere la position de l'espace dans la deuxième liste (1)
+    - Je récupere la lettre à la position 1 dans la première liste (a)
+
+    un espace déchiffré avec la clé 1 (La clé étant le décalage de la deuxième liste) donne donc a */
+
 
 function EntierAléatoire(ChiffreMax) { 
 //Fonction qui renvoie un entier aléatoire entre 0 et le paramètre compris
@@ -69,11 +104,11 @@ function EntierBorné(min, max) {
 }
   
 
-function estMultiplede26(Chiffre) {
+function estMultiplede27(Chiffre) {
 
-    //Fonction qui vérifie si un chiffre est un multiple de 26 en vérifiant le modulo 
+    //Fonction qui vérifie si un chiffre est un multiple de 27 en vérifiant le modulo 
 
-    modulo = Chiffre % 26;
+    modulo = Chiffre % 27;
     
     if (modulo == 0) {
         return true;
@@ -129,8 +164,6 @@ function changementsValeur(opération){
     let index = NuméroCaseIndice - 1;
     //On prend en compte le fait que l'indice d'une chaine commence toujours à 0
     
-    console.log(typeof ContenuCaseIndice.innerHTML + ContenuCaseIndice.innerHTML + typeof listeClef[index] + listeClef[index]);
-
     if (ContenuCaseIndice.innerHTML == listeClef[index] && caseAff + 1 == NuméroCaseIndice)  {
     //Si le contenu de la case indice est égale à la valeur de son index de la clef
     //ET que cette case est celle qui vient d'être modifié :
@@ -191,15 +224,15 @@ function clicDéchiffrement() {
 if (!localStorage.getItem("Clef") || !localStorage.getItem("MessageChiffre") || !localStorage.getItem("MessageClair")) {
 //Si il manque les données, soit aucune partie n'a été commencée, soit l'user à vidé certaine partie du localstorage
 
-    let PositionsGeneral = ["au bar", "a la petanque", "au petit coin", "avec sa mamie"];
+    let PositionsGeneral = ["au bar", "a la petanque", "au petit coin", "chez sa mamie", "au kebab"];
     let indexRandom = EntierAléatoire(PositionsGeneral.length);
     //On choisi une position aléatoire pour le général parmis la liste de positions possibles
 
     clef = EntierAléatoire(9999);
     //On choisi un clef de chiffrement aléatoire à quatre chiffre 
 
-    while (estMultiplede26(clef)) {
-    //Tant que la clef est un multiple de 26, le message ne sera pas chiffré correctement
+    while (estMultiplede27(clef)) {
+    //Tant que la clef est un multiple de 27, le message ne sera pas chiffré correctement
 
         clef = EntierAléatoire(9999);
         //On régenère une nouvelle clef
