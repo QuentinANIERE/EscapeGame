@@ -87,7 +87,7 @@ button {
 
     color: white;
     border: 8px solid black;
-    background-image: url(../médias/metal.jpg); 
+    background-image: url("../Médias/metal.jpg"); 
     font-family: KillingFont;
 }
 
