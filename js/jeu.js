@@ -189,7 +189,7 @@ function clicAide() {
     aide = window.open("aide.html","aide", "top=10, left=10, \
     height=400, width=400, \
     directories=no, menubar=no, status=no, location=no");
-    //Affichage d'un pop d'aide
+    //Affichage d'un pop up d'aide
 }
 
 function clicDéchiffrement() {
