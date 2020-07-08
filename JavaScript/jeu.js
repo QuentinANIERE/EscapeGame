@@ -181,7 +181,7 @@ function changementsValeur(opération){
 }
 
 function victoire() {
-    window.location = "./bravo.html";
+    window.location = "Bravo.html";
 }
 
 function clicAide() {

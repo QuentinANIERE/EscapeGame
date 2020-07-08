@@ -1,7 +1,9 @@
 body {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
     font-family: Montserrat-Regular;
-    background-image: url(../médias/fond.jpg);
+    background-image: url(../Médias/fond.jpg);
 }
 
 p {
@@ -30,8 +32,16 @@ button {
 
 #ConteneurBoutton {
     margin: 1vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex; 
-    justify-content: center;
+    -webkit-box-pack: center; 
+    -webkit-justify-content: center; 
+       -moz-box-pack: center; 
+        -ms-flex-pack: center; 
+            justify-content: center;
 }
 
 
@@ -46,7 +56,11 @@ button {
     padding-left: 4vw;
     padding-right: 4vw;
 
-    border-radius: 30px;
+    -webkit-border-radius: 30px;
+
+       -moz-border-radius: 30px;
+
+            border-radius: 30px;
     background-color: white;
     
     

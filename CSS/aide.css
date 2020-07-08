@@ -1,6 +1,7 @@
 @font-face {
     font-family: ChickenSoup;
-    src: url('../font/ChickenSoup.otf');
+    src: url("../Fonts/ChickenSoup.otf") format("otf"),
+         url("../Fonts/ChickenSoup.ttf") format("truetype");
 }
 
 html, body {	
@@ -14,9 +15,12 @@ body {
     display: table;
     position: fixed;
     overflow: hidden;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     text-align: center;
-    background-image: url("../médias/vieux_papier.jpg");
+    background-image: url("../Médias/vieux_papier.jpg");
 }
 
 footer {
