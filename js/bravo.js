@@ -1,3 +1,9 @@
+var MusiqueVictoire = document.getElementById("MusiqueVictoire");
+setTimeout(() => { MusiqueVictoire.play() }, 500);
+//Un délai est obligatoire car sinon cela est considéré comme indésirable par les navigateurs.
+
+$.confetti.start();
+
 localStorage.removeItem("Clef");
 localStorage.removeItem("MessageClair");
 localStorage.removeItem("MessageChiffre");
