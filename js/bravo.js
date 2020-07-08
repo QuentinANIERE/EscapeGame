@@ -1,3 +1,6 @@
+AffichagePosition = document.getElementById("Position");
+Position.innerHTML = localStorage.getItem("MessageClair");
+
 var MusiqueVictoire = document.getElementById("MusiqueVictoire");
 setTimeout(() => { MusiqueVictoire.play() }, 500);
 //Un délai est obligatoire car sinon cela est considéré comme indésirable par les navigateurs.
@@ -5,6 +8,6 @@ setTimeout(() => { MusiqueVictoire.play() }, 500);
 $.confetti.start();
 
 localStorage.removeItem("Clef");
+localStorage.removeItem("Message");
 localStorage.removeItem("MessageClair");
-localStorage.removeItem("MessageChiffre");
 //On supprime les valeurs stockées afin de permettre à l'utilisateur de rejouer

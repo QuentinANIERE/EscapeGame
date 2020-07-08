@@ -28,6 +28,10 @@ button {
     margin-top: 8vh;
 }
 
+img {
+    width: 30vw;
+}
+
 #ConteneurBoutton {
     margin: 1vh;
     display: flex; 
