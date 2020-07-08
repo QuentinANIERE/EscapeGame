@@ -242,7 +242,7 @@ if (!localStorage.getItem("Clef") || !localStorage.getItem("MessageChiffre") || 
     MessageChiffre = chiffrement(MessageClair, clef);
 
     localStorage.setItem("Clef", clef);
-    localStorage.setItem("Message", MessageChiffre);
+    localStorage.setItem("MessageChiffre", MessageChiffre);
     localStorage.setItem("MessageClair", MessageClair);
     //On stocke la clef de chiffrement et le message chiffre dans le local storage
     //Cela permet de récuperer les valeurs dans le script d'aide et de garder les mêmes valeurs en cas de rechargement
@@ -256,7 +256,7 @@ if (!localStorage.getItem("Clef") || !localStorage.getItem("MessageChiffre") || 
 
   clef = localStorage.getItem("Clef");
   MessageClair = localStorage.getItem("MessageClair");
-  MessageChiffre = localStorage.getItem("Message");
+  MessageChiffre = localStorage.getItem("MessageChiffre");
 
 }
 

@@ -8,6 +8,6 @@ setTimeout(() => { MusiqueVictoire.play() }, 500);
 $.confetti.start();
 
 localStorage.removeItem("Clef");
-localStorage.removeItem("Message");
+localStorage.removeItem("MessageChiffre");
 localStorage.removeItem("MessageClair");
 //On supprime les valeurs stockées afin de permettre à l'utilisateur de rejouer
